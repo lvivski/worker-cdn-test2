@@ -1,3 +1,7 @@
+self.addEventListener('unhandledrejection', (e) => {
+    console.log(e)
+});
+
 setTimeout(() => {
     importScripts('https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test@v1/worker_import.js')
 }, 100)
