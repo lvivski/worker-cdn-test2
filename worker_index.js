@@ -3,7 +3,7 @@ self.addEventListener('unhandledrejection', (e) => {
 });
 
 setTimeout(() => {
-    importScripts('https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test@v1/worker_import.js')
+    importScripts('https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test2@v1/worker_import.js')
 }, 100)
 
 setTimeout(() => {
