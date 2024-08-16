@@ -12,9 +12,7 @@
         const workerTemplate = (script) => {
             self.onunhandledrejection = (e) => {
                 e.preventDefault()
-                throw e.reason?.stack 
-                    ? e.reason.name + ': ' + e.reason.message + '\n' + e.reason.stack
-                    : e.reason
+                throw e.reason
             }
             importScripts(script)
 
