@@ -1,5 +1,5 @@
 setTimeout(() => {
-    importScripts('https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test2@v3/worker_import.js')
+    importScripts('https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test2@v4/worker_import.js')
 }, 100)
 
 setTimeout(() => {
