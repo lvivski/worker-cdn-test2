@@ -1,1 +1,0 @@
-# worker-cdn-test2
