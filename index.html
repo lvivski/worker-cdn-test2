@@ -4,31 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker error handling test2</title>
+    <script src="https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test2@v5/index.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <script>
-        const script = 'https://cdn.jsdelivr.net/gh/lvivski/worker-cdn-test2@v4/worker_index.js';
-
-        const workerTemplate = (script) => {
-            self.onunhandledrejection = (e) => {
-                e.preventDefault()
-                throw e.reason?.stack 
-                    ? e.reason.name + ': ' + e.reason.message + '\n' + e.reason.stack
-                    : e.reason
-            }
-            importScripts(script)
-
-            setTimeout(() => {
-                Promise.resolve().then(() => { throw new Error('loader error') });
-            }, 1000)
-        }
-
-        const blob = new Blob([`(${workerTemplate.toString()})('${script}')`], { type: 'application/javascript' });
-        const worker = new Worker(URL.createObjectURL(blob));
-
-        worker.onerror = (e) => {
-            console.info('Worker error:', e)
-        }
-    </script>
+    Check console
 </body>
 </html>
